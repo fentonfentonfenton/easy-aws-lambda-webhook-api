@@ -1,4 +1,4 @@
-# Simple Lambda Webhook
+# Simple Lambda Webhook Module
 
 A lambda function behind a webhook that returns a response from `curl`.
 
@@ -25,8 +25,9 @@ api_endpoint = "https://xyz123.execute-api.eu-west-1.amazonaws.com"
 
 You would need `AWS` credentials in your shell for this to work.
 We reccomend you setup and use `aws-vault`
+A `name` variable an an `aws_region` variable.
 
-### Installing
+### Installing (Manual)
 
 * `terraform init` <- Downloads and installs the terraform modules you need.
 * `terraform plan -var="aws_region=eu-west-1" -var="name=test"` <- Shows you what would be created in AWS
