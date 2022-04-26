@@ -33,13 +33,19 @@ We reccomend you setup and use `aws-vault`
 * `terraform apply -var="aws_region=eu-west-1" -var="name=test"`<- Actually creates the stuff
 * `terraform destroy -var="aws_region=eu-west-1" -var="name=test"` <- Tears everything down, you don't want to spend money!
 
+### Testing
+
+Uses a `terratest` [github action](https://github.com/fac/terratest-github-action) to run the tests in [/test](/test) which check the endpoint for the correct response.
+
 ## Version History
 
 * 0.1
     * Initial Release
+* 0.2
+    * Tests
 
 ## TODO
 
 - [x] Create terraform for `lambda`
 - [x] Create terraform for `apigateway`
-- [x] Test
+- [x] Testing
