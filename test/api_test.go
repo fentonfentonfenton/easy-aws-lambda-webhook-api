@@ -21,12 +21,5 @@ func TestApiGateway(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 	terraform.InitAndApply(t, terraformOptions)
 	stageUrl := terraform.Output(t, terraformOptions, "api_endpoint")
-	time.Sleep(30 * time.Second)
-	statusCode := DoGetRequest(t, stageUrl)
-	assert.Equal(t, 200, statusCode)
-}
-
-func DoGetRequest(t *testing.T, url string) int {
-	http_helper.HttpGetWithRetry(t, url, nil, 200, "Hello World!", 10, 5*time.Second)
-	return 1
+	http_helper.HttpGetWithRetry(t, stageUrl, nil, 200, "Hello World!", 10, 5*time.Second)
 }
