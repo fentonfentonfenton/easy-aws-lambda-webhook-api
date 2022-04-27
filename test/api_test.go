@@ -3,7 +3,6 @@ package testing
 import (
 	http_helper "github.com/gruntwork-io/terratest/modules/http-helper"
 	"github.com/gruntwork-io/terratest/modules/terraform"
-	"github.com/stretchr/testify/assert"
 	"testing"
 	"time"
 )
@@ -21,5 +20,6 @@ func TestApiGateway(t *testing.T) {
 	defer terraform.Destroy(t, terraformOptions)
 	terraform.InitAndApply(t, terraformOptions)
 	stageUrl := terraform.Output(t, terraformOptions, "api_endpoint")
-	http_helper.HttpGetWithRetry(t, stageUrl, nil, 200, "Hello World!", 10, 5*time.Second)
+	http_helper.HttpGetWithRetry(t, stageUrl, nil, 200, "Hello World!", 5, 5*time.Second)
+	println("Tested OK") // Fails if the above method fails.
 }
