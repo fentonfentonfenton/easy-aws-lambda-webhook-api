@@ -2,6 +2,8 @@
 
 A lambda function behind a webhook that returns a response from `curl`.
 
+![image](https://github.com/fentonfentonfenton/easy-aws-lambda-webhook-api/workflows/Automated%20Testing/badge.svg)
+
 ## Description
 
 Contains the `terraform`, tests and the source code.
@@ -27,7 +29,7 @@ api_endpoint = "https://xyz123.execute-api.eu-west-1.amazonaws.com"
 
 You would need `AWS` credentials in your shell for this to work.
 We reccomend you setup and use `aws-vault`
-A `name` variable an an `aws_region` variable.
+A `name` variable and a `aws_region` variable.
 
 ### Installing (Manual)
 
