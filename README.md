@@ -29,7 +29,8 @@ api_endpoint = "https://xyz123.execute-api.eu-west-1.amazonaws.com"
 
 You would need `AWS` credentials in your shell for this to work.
 We reccomend you setup and use `aws-vault`
-A `name` variable and a `aws_region` variable.
+
+Pass `terraform` a `name` variable and a `aws_region` variable.
 
 ### Installing (Manual)
 
